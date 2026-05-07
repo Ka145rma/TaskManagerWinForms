@@ -2,5 +2,5 @@
   <Folder Name="/Элементы решения/">
     <File Path=".gitignore" />
   </Folder>
-  <Project Path="Task/Task.csproj" />
+  <Project Path="Task/Task.csproj" Id="9783da7e-3fdf-427b-a373-5e2ec0785542" />
 </Solution>
