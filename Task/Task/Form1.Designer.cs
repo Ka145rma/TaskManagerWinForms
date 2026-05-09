@@ -52,11 +52,16 @@
             this.cmbSort = new System.Windows.Forms.ComboBox();
             this.lblFilter = new System.Windows.Forms.Label();
             this.lblSort = new System.Windows.Forms.Label();
-            this.lstTasks = new System.Windows.Forms.ListBox();
-            this.pnlRight.SuspendLayout();
+            this.lstTasks = new System.Windows.Forms.DataGridView();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priority = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpTaskData.SuspendLayout();
             this.grpAction.SuspendLayout();
             this.grpFilters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lstTasks)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTasks
@@ -70,9 +75,8 @@
             // 
             // pnlRight
             // 
-            this.pnlRight.Controls.Add(this.grpTaskData);
             this.pnlRight.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.pnlRight.Location = new System.Drawing.Point(847, 9);
+            this.pnlRight.Location = new System.Drawing.Point(916, 43);
             this.pnlRight.Name = "pnlRight";
             this.pnlRight.Size = new System.Drawing.Size(754, 341);
             this.pnlRight.TabIndex = 2;
@@ -89,7 +93,7 @@
             this.grpTaskData.Controls.Add(this.txtDescription);
             this.grpTaskData.Controls.Add(this.txtTitle);
             this.grpTaskData.Controls.Add(this.lblTitle);
-            this.grpTaskData.Location = new System.Drawing.Point(0, 0);
+            this.grpTaskData.Location = new System.Drawing.Point(916, 43);
             this.grpTaskData.Name = "grpTaskData";
             this.grpTaskData.Size = new System.Drawing.Size(754, 344);
             this.grpTaskData.TabIndex = 0;
@@ -102,7 +106,7 @@
             this.chkCompleted.AutoSize = true;
             this.chkCompleted.Location = new System.Drawing.Point(189, 291);
             this.chkCompleted.Name = "chkCompleted";
-            this.chkCompleted.Size = new System.Drawing.Size(111, 24);
+            this.chkCompleted.Size = new System.Drawing.Size(102, 20);
             this.chkCompleted.TabIndex = 19;
             this.chkCompleted.Text = "выполнено";
             this.chkCompleted.UseVisualStyleBackColor = true;
@@ -118,7 +122,7 @@
             "сложный"});
             this.cmbPriority.Location = new System.Drawing.Point(189, 247);
             this.cmbPriority.Name = "cmbPriority";
-            this.cmbPriority.Size = new System.Drawing.Size(200, 28);
+            this.cmbPriority.Size = new System.Drawing.Size(200, 24);
             this.cmbPriority.TabIndex = 18;
             this.cmbPriority.SelectedIndexChanged += new System.EventHandler(this.cmbPriority_SelectedIndexChanged);
             // 
@@ -127,7 +131,7 @@
             this.dtpDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDueDate.Location = new System.Drawing.Point(189, 204);
             this.dtpDueDate.Name = "dtpDueDate";
-            this.dtpDueDate.Size = new System.Drawing.Size(200, 27);
+            this.dtpDueDate.Size = new System.Drawing.Size(200, 22);
             this.dtpDueDate.TabIndex = 17;
             this.dtpDueDate.ValueChanged += new System.EventHandler(this.dtpDueDate_ValueChanged);
             // 
@@ -136,7 +140,7 @@
             this.lblStatus.AutoSize = true;
             this.lblStatus.Location = new System.Drawing.Point(33, 291);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(53, 20);
+            this.lblStatus.Size = new System.Drawing.Size(54, 16);
             this.lblStatus.TabIndex = 16;
             this.lblStatus.Text = "статус:";
             // 
@@ -145,7 +149,7 @@
             this.lblPriority.AutoSize = true;
             this.lblPriority.Location = new System.Drawing.Point(33, 247);
             this.lblPriority.Name = "lblPriority";
-            this.lblPriority.Size = new System.Drawing.Size(86, 20);
+            this.lblPriority.Size = new System.Drawing.Size(80, 16);
             this.lblPriority.TabIndex = 15;
             this.lblPriority.Text = "приоритет:";
             // 
@@ -154,7 +158,7 @@
             this.lblDate.AutoSize = true;
             this.lblDate.Location = new System.Drawing.Point(33, 204);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(134, 20);
+            this.lblDate.Size = new System.Drawing.Size(124, 16);
             this.lblDate.TabIndex = 14;
             this.lblDate.Text = "дата выполнения:";
             // 
@@ -163,7 +167,7 @@
             this.lblDescription.AutoSize = true;
             this.lblDescription.Location = new System.Drawing.Point(33, 80);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(80, 20);
+            this.lblDescription.Size = new System.Drawing.Size(73, 16);
             this.lblDescription.TabIndex = 13;
             this.lblDescription.Text = "описание:";
             // 
@@ -185,7 +189,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTitle.Location = new System.Drawing.Point(189, 26);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(532, 27);
+            this.txtTitle.Size = new System.Drawing.Size(532, 22);
             this.txtTitle.TabIndex = 11;
             this.txtTitle.TextChanged += new System.EventHandler(this.txtTitle_TextChanged);
             // 
@@ -204,7 +208,7 @@
             this.grpAction.Controls.Add(this.btnDelete);
             this.grpAction.Controls.Add(this.btnEdit);
             this.grpAction.Controls.Add(this.btnAdd);
-            this.grpAction.Location = new System.Drawing.Point(847, 356);
+            this.grpAction.Location = new System.Drawing.Point(916, 390);
             this.grpAction.Name = "grpAction";
             this.grpAction.Size = new System.Drawing.Size(754, 105);
             this.grpAction.TabIndex = 10;
@@ -251,7 +255,7 @@
             this.grpFilters.Controls.Add(this.cmbSort);
             this.grpFilters.Controls.Add(this.lblFilter);
             this.grpFilters.Controls.Add(this.lblSort);
-            this.grpFilters.Location = new System.Drawing.Point(847, 467);
+            this.grpFilters.Location = new System.Drawing.Point(916, 501);
             this.grpFilters.Name = "grpFilters";
             this.grpFilters.Size = new System.Drawing.Size(754, 128);
             this.grpFilters.TabIndex = 11;
@@ -300,7 +304,8 @@
             this.cmbSort.Items.AddRange(new object[] {
             "по дате",
             "по приоритету",
-            "по названию"});
+            "по названию",
+            "по статусу"});
             this.cmbSort.Location = new System.Drawing.Point(41, 53);
             this.cmbSort.Name = "cmbSort";
             this.cmbSort.Size = new System.Drawing.Size(169, 24);
@@ -328,18 +333,67 @@
             // 
             // lstTasks
             // 
-            this.lstTasks.FormattingEnabled = true;
-            this.lstTasks.ItemHeight = 16;
-            this.lstTasks.Location = new System.Drawing.Point(12, 35);
+            this.lstTasks.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lstTasks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.lstTasks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.name,
+            this.description,
+            this.date,
+            this.priority,
+            this.status});
+            this.lstTasks.Location = new System.Drawing.Point(12, 43);
             this.lstTasks.Name = "lstTasks";
-            this.lstTasks.Size = new System.Drawing.Size(829, 580);
-            this.lstTasks.TabIndex = 13;
+            this.lstTasks.RowHeadersWidth = 51;
+            this.lstTasks.RowTemplate.Height = 24;
+            this.lstTasks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.lstTasks.Size = new System.Drawing.Size(898, 698);
+            this.lstTasks.TabIndex = 6;
+            this.lstTasks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.lstTasks_CellContentClick);
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.HeaderText = "Название";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            // 
+            // description
+            // 
+            this.description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.description.HeaderText = "Описасние";
+            this.description.MinimumWidth = 6;
+            this.description.Name = "description";
+            // 
+            // date
+            // 
+            this.date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.date.HeaderText = "Дата";
+            this.date.MinimumWidth = 6;
+            this.date.Name = "date";
+            this.date.Width = 125;
+            // 
+            // priority
+            // 
+            this.priority.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.priority.HeaderText = "Приоритет";
+            this.priority.MinimumWidth = 6;
+            this.priority.Name = "priority";
+            this.priority.Width = 90;
+            // 
+            // status
+            // 
+            this.status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.status.HeaderText = "Статус ";
+            this.status.MinimumWidth = 6;
+            this.status.Name = "status";
+            this.status.Width = 125;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 853);
+            this.ClientSize = new System.Drawing.Size(1682, 753);
+            this.Controls.Add(this.grpTaskData);
             this.Controls.Add(this.lstTasks);
             this.Controls.Add(this.grpFilters);
             this.Controls.Add(this.grpAction);
@@ -347,12 +401,12 @@
             this.Controls.Add(this.lblTasks);
             this.Name = "Form1";
             this.Text = "TaskManager — Управление задачами";
-            this.pnlRight.ResumeLayout(false);
             this.grpTaskData.ResumeLayout(false);
             this.grpTaskData.PerformLayout();
             this.grpAction.ResumeLayout(false);
             this.grpFilters.ResumeLayout(false);
             this.grpFilters.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lstTasks)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -382,7 +436,12 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.ListBox lstTasks;
+        private System.Windows.Forms.DataGridView lstTasks;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priority;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
     }
 }
 
