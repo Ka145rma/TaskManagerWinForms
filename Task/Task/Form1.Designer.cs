@@ -1,4 +1,4 @@
-﻿namespace Task
+namespace Task
 {
     partial class Form1
     {
@@ -83,6 +83,8 @@
             // 
             // grpTaskData
             // 
+            this.grpTaskData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpTaskData.Controls.Add(this.chkCompleted);
             this.grpTaskData.Controls.Add(this.cmbPriority);
             this.grpTaskData.Controls.Add(this.dtpDueDate);
@@ -95,7 +97,7 @@
             this.grpTaskData.Controls.Add(this.lblTitle);
             this.grpTaskData.Location = new System.Drawing.Point(916, 43);
             this.grpTaskData.Name = "grpTaskData";
-            this.grpTaskData.Size = new System.Drawing.Size(754, 344);
+            this.grpTaskData.Size = new System.Drawing.Size(751, 344);
             this.grpTaskData.TabIndex = 0;
             this.grpTaskData.TabStop = false;
             this.grpTaskData.Text = "данные задачи ";
@@ -103,6 +105,8 @@
             // 
             // chkCompleted
             // 
+            this.chkCompleted.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.chkCompleted.AutoSize = true;
             this.chkCompleted.Location = new System.Drawing.Point(189, 291);
             this.chkCompleted.Name = "chkCompleted";
@@ -114,6 +118,8 @@
             // 
             // cmbPriority
             // 
+            this.cmbPriority.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbPriority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPriority.FormattingEnabled = true;
             this.cmbPriority.Items.AddRange(new object[] {
@@ -122,16 +128,18 @@
             "сложный"});
             this.cmbPriority.Location = new System.Drawing.Point(189, 247);
             this.cmbPriority.Name = "cmbPriority";
-            this.cmbPriority.Size = new System.Drawing.Size(200, 24);
+            this.cmbPriority.Size = new System.Drawing.Size(197, 24);
             this.cmbPriority.TabIndex = 18;
             this.cmbPriority.SelectedIndexChanged += new System.EventHandler(this.cmbPriority_SelectedIndexChanged);
             // 
             // dtpDueDate
             // 
+            this.dtpDueDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDueDate.Location = new System.Drawing.Point(189, 204);
             this.dtpDueDate.Name = "dtpDueDate";
-            this.dtpDueDate.Size = new System.Drawing.Size(200, 22);
+            this.dtpDueDate.Size = new System.Drawing.Size(197, 22);
             this.dtpDueDate.TabIndex = 17;
             this.dtpDueDate.ValueChanged += new System.EventHandler(this.dtpDueDate_ValueChanged);
             // 
@@ -179,7 +187,7 @@
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtDescription.Size = new System.Drawing.Size(532, 98);
+            this.txtDescription.Size = new System.Drawing.Size(274, 98);
             this.txtDescription.TabIndex = 12;
             this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
             // 
@@ -189,7 +197,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTitle.Location = new System.Drawing.Point(189, 26);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(532, 22);
+            this.txtTitle.Size = new System.Drawing.Size(274, 22);
             this.txtTitle.TabIndex = 11;
             this.txtTitle.TextChanged += new System.EventHandler(this.txtTitle_TextChanged);
             // 
@@ -205,6 +213,8 @@
             // 
             // grpAction
             // 
+            this.grpAction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpAction.Controls.Add(this.btnDelete);
             this.grpAction.Controls.Add(this.btnEdit);
             this.grpAction.Controls.Add(this.btnAdd);
@@ -217,10 +227,11 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelete.BackColor = System.Drawing.Color.LightCoral;
-            this.btnDelete.Location = new System.Drawing.Point(558, 37);
+            this.btnDelete.Location = new System.Drawing.Point(325, 37);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(177, 41);
+            this.btnDelete.Size = new System.Drawing.Size(138, 41);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "удалить";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -228,9 +239,10 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(277, 37);
+            this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEdit.Location = new System.Drawing.Point(160, 37);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(189, 41);
+            this.btnEdit.Size = new System.Drawing.Size(146, 41);
             this.btnEdit.TabIndex = 1;
             this.btnEdit.Text = "редактировать";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -241,7 +253,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.LightGreen;
             this.btnAdd.Location = new System.Drawing.Point(18, 37);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(167, 41);
+            this.btnAdd.Size = new System.Drawing.Size(124, 41);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "добавить";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -249,6 +261,8 @@
             // 
             // grpFilters
             // 
+            this.grpFilters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpFilters.Controls.Add(this.btnResetFilter);
             this.grpFilters.Controls.Add(this.btnApplySort);
             this.grpFilters.Controls.Add(this.cmbFilter);
@@ -265,7 +279,8 @@
             // 
             // btnResetFilter
             // 
-            this.btnResetFilter.Location = new System.Drawing.Point(469, 81);
+            this.btnResetFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnResetFilter.Location = new System.Drawing.Point(262, 81);
             this.btnResetFilter.Name = "btnResetFilter";
             this.btnResetFilter.Size = new System.Drawing.Size(184, 33);
             this.btnResetFilter.TabIndex = 5;
@@ -285,13 +300,14 @@
             // 
             // cmbFilter
             // 
+            this.cmbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFilter.FormattingEnabled = true;
             this.cmbFilter.Items.AddRange(new object[] {
             "все задачи",
             "выполненные",
             "невыполненные"});
-            this.cmbFilter.Location = new System.Drawing.Point(469, 51);
+            this.cmbFilter.Location = new System.Drawing.Point(262, 53);
             this.cmbFilter.Name = "cmbFilter";
             this.cmbFilter.Size = new System.Drawing.Size(184, 24);
             this.cmbFilter.TabIndex = 3;
@@ -314,8 +330,9 @@
             // 
             // lblFilter
             // 
+            this.lblFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFilter.AutoSize = true;
-            this.lblFilter.Location = new System.Drawing.Point(466, 32);
+            this.lblFilter.Location = new System.Drawing.Point(259, 32);
             this.lblFilter.Name = "lblFilter";
             this.lblFilter.Size = new System.Drawing.Size(59, 16);
             this.lblFilter.TabIndex = 1;
@@ -333,6 +350,8 @@
             // 
             // lstTasks
             // 
+            this.lstTasks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lstTasks.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lstTasks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.lstTasks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
