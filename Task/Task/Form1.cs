@@ -133,6 +133,9 @@ namespace Task
                     ColorPriorityCell(lstTasks.Rows[lstTasks.Rows.Count - 2]);
                 }
             }
+
+            ColorPriorityCell(lstTasks.Rows[lstTasks.Rows.Count - 2]);
+            ColorStatusAndDateCells(lstTasks.Rows[lstTasks.Rows.Count - 2]);
         }
 
         /// <summary>
@@ -188,6 +191,7 @@ namespace Task
                 // Обычный режим: добавляем новую строку
                 lstTasks.Rows.Add(title, description, dueDate, priority, status);
                 ColorPriorityCell(lstTasks.Rows[lstTasks.Rows.Count - 2]);
+                ColorStatusAndDateCells(lstTasks.Rows[lstTasks.Rows.Count - 2]);
             }
 
             txtTitle.Clear();
@@ -195,6 +199,7 @@ namespace Task
             dtpDueDate.Value = DateTime.Now;
             cmbPriority.SelectedIndex = -1;
             chkCompleted.Checked = false;
+
         }
 
         /// <summary>
@@ -391,6 +396,9 @@ namespace Task
                 lstTasks.Rows.Add(item.name, item.desc, item.date, item.priority, item.status);
                 ColorPriorityCell(lstTasks.Rows[lstTasks.Rows.Count - 2]);
             }
+
+            ColorPriorityCell(lstTasks.Rows[lstTasks.Rows.Count - 2]);
+            ColorStatusAndDateCells(lstTasks.Rows[lstTasks.Rows.Count - 2]);
         }
 
         /// <summary>
@@ -415,6 +423,10 @@ namespace Task
 
             cmbFilter.SelectedIndex = -1;
             cmbSort.SelectedIndex = -1;
+
+            ColorPriorityCell(lstTasks.Rows[lstTasks.Rows.Count - 2]);
+            ColorStatusAndDateCells(lstTasks.Rows[lstTasks.Rows.Count - 2]);
+
         }
 
         /// <summary>
@@ -462,6 +474,42 @@ namespace Task
 
             row.Cells["priority"].Style.BackColor = back;
             row.Cells["priority"].Style.ForeColor = fore;
+        }
+
+        /// <summary>
+        /// Устанавливает цвет ячеек «Статус» и «Дата» в зависимости от их значений.
+        /// <list type="bullet">
+        ///   <item><description>«Выполнено» — зелёный фон, тёмно-зелёный текст.</description></item>
+        ///   <item><description>«Не выполнено» — красный фон, тёмно-красный текст.</description></item>
+        ///   <item><description>Дата, которая уже прошла — красный фон, тёмно-красный текст.</description></item>
+        /// </list>
+        /// </summary>
+        /// <param name="row">Строка таблицы <see cref="DataGridView"/>, у которой нужно обновить цвет ячеек статуса и даты.</param>
+        private void ColorStatusAndDateCells(DataGridViewRow row)
+        {
+            string statusVal = row.Cells["status"].Value?.ToString() ?? "";
+            if (statusVal == "Выполнено")
+            {
+                row.Cells["status"].Style.BackColor = Color.FromArgb(198, 239, 206); // зелёный
+                row.Cells["status"].Style.ForeColor = Color.FromArgb(0, 97, 0);
+            }
+            else if (statusVal == "Не выполнено")
+            {
+                row.Cells["status"].Style.BackColor = Color.FromArgb(255, 199, 206); // красный
+                row.Cells["status"].Style.ForeColor = Color.FromArgb(156, 0, 6);
+            }
+
+            string dateStr = row.Cells["date"].Value?.ToString() ?? "";
+            if (DateTime.TryParseExact(dateStr, "dd.MM.yyyy",
+                System.Globalization.CultureInfo.InvariantCulture,
+                System.Globalization.DateTimeStyles.None, out DateTime taskDate))
+            {
+                if (taskDate.Date < DateTime.Today)
+                {
+                    row.Cells["date"].Style.BackColor = Color.FromArgb(255, 199, 206); // красный
+                    row.Cells["date"].Style.ForeColor = Color.FromArgb(156, 0, 6);
+                }
+            }
         }
     }
 }
