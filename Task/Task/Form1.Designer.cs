@@ -97,7 +97,7 @@ namespace Task
             this.grpTaskData.Controls.Add(this.lblTitle);
             this.grpTaskData.Location = new System.Drawing.Point(916, 43);
             this.grpTaskData.Name = "grpTaskData";
-            this.grpTaskData.Size = new System.Drawing.Size(751, 344);
+            this.grpTaskData.Size = new System.Drawing.Size(754, 344);
             this.grpTaskData.TabIndex = 0;
             this.grpTaskData.TabStop = false;
             this.grpTaskData.Text = "данные задачи ";
@@ -128,7 +128,7 @@ namespace Task
             "сложный"});
             this.cmbPriority.Location = new System.Drawing.Point(189, 247);
             this.cmbPriority.Name = "cmbPriority";
-            this.cmbPriority.Size = new System.Drawing.Size(197, 24);
+            this.cmbPriority.Size = new System.Drawing.Size(200, 24);
             this.cmbPriority.TabIndex = 18;
             this.cmbPriority.SelectedIndexChanged += new System.EventHandler(this.cmbPriority_SelectedIndexChanged);
             // 
@@ -139,7 +139,7 @@ namespace Task
             this.dtpDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDueDate.Location = new System.Drawing.Point(189, 204);
             this.dtpDueDate.Name = "dtpDueDate";
-            this.dtpDueDate.Size = new System.Drawing.Size(197, 22);
+            this.dtpDueDate.Size = new System.Drawing.Size(200, 22);
             this.dtpDueDate.TabIndex = 17;
             this.dtpDueDate.ValueChanged += new System.EventHandler(this.dtpDueDate_ValueChanged);
             // 
@@ -187,7 +187,7 @@ namespace Task
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtDescription.Size = new System.Drawing.Size(274, 98);
+            this.txtDescription.Size = new System.Drawing.Size(277, 98);
             this.txtDescription.TabIndex = 12;
             this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
             // 
@@ -197,7 +197,7 @@ namespace Task
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTitle.Location = new System.Drawing.Point(189, 26);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(274, 22);
+            this.txtTitle.Size = new System.Drawing.Size(277, 22);
             this.txtTitle.TabIndex = 11;
             this.txtTitle.TextChanged += new System.EventHandler(this.txtTitle_TextChanged);
             // 
